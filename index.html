@@ -108,8 +108,7 @@
       if (response && !response.error) {
        profileUrl = response.data.url
        callback = response;
-    $('.FBphoto').append($('<img/>')
-    .attr('src',profileUrl)
+    drawImage(level,profileUrl,filterUrl)
        )
         
       }
@@ -117,6 +116,31 @@
 );
     
   }
+  
+  function drawImage(level,baseUrl,filterUrl)
+{
+  var canvas = document.getElementById("leCanvas");
+  var context = canvas.getContext("2d");
+  context.globalCompositeOperation = "source-over";
+
+  var image = new Image();
+  image.src = baseUrl;
+  image.onload = function() {
+    context.drawImage(image, 0, 0, canvas.width, canvas.height);
+
+    if (filterUrl)
+
+    var cityImage = new Image();
+    cityImage.src = filterUrl;
+    cityImage.onload = function() {
+      context.globalCompositeOperation = "soft-light";
+      context.drawImage(cityImage, 0, 0, canvas.width, canvas.height);
+
+   
+    };
+  };
+}
+  
 </script>
 
 <!--
