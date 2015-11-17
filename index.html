@@ -74,13 +74,16 @@
     console.log('Welcome!  Fetching your information.... ');
     FB.api('/me', function(response) {
       console.log('Successful login for: ' + response.name);
-      var fbID = FB.getUserID()
-      
+      yo()
+      console.log(fbID);
       document.getElementById('status').innerHTML =
         'Thanks for logging in, ' + response.name + '!';
     });
   }
   var fbID;
+  function yo(){
+     var fbID = FB.getUserID()
+  }
   
   var profileUrl
   
