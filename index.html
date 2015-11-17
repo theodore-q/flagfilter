@@ -81,12 +81,13 @@
     });
   }
   var fbID;
-  function yo(){
-    console.log('sup!')
-     var fbID = FB.getUserID()
-  }
+  
+
+  
   
   var profileUrl
+  
+  function yo(){
   
   $('.getphoto').click(function(){
     var fbID = FB.getUserID();
@@ -98,7 +99,7 @@
     .attr('src',test)
     )
   });
-  
+  }
   
   function getPhotoLink(link,callback){
     FB.api(
@@ -109,8 +110,9 @@
        callback = response;
     $('.FBphoto').append($('<img/>')
     .attr('src',profileUrl)
-       
-      )}
+       )
+        
+      }
     }
 );
     
