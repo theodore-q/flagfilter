@@ -89,16 +89,19 @@
   var profileUrl
   
   $('.getphoto').click(function(){
-    getPhotoLink()
+    var fbID = FB.getUserID();
+    console.log(fbID)
+    test = getPhotoLink(fbID)
+    console.log(test)
     $('.FBphoto').append($('<img/>')
-    .attr('src',profileUrl)
+    .attr('src',test)
     )
-  })
+  });
   
   
-  function getPhotoLink(){
+  function getPhotoLink(link){
     FB.api(
-    "/"+ fbID +"/picture/?width=9999",
+    "/"+ link +"/picture/?width=9999",
     function (response) {
       if (response && !response.error) {
        profileUrl = response.data.url
