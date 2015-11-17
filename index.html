@@ -3,6 +3,7 @@
 <head>
 <title>Facebook Login JavaScript Example</title>
 <meta charset="UTF-8">
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 </head>
 <body>
 <script>
@@ -84,6 +85,25 @@
         'Thanks for logging in, ' + response.name + '!';
     });
   }
+  var fbID = FB.getUserID()
+  
+  var profileUrl
+  
+  $('.getphoto').click(function(){
+    getPhotoLink()
+  })
+  
+  function getPhotoLink(){
+    FB.api(
+    "/"+ fbID +"/picture/?width=9999",
+    function (response) {
+      if (response && !response.error) {
+       profileUrl = response.data.url
+      }
+    }
+);
+    
+  }
 </script>
 
 <!--
@@ -98,6 +118,7 @@
 <div id="status">
 </div>
 
+<div class='getphoto' >get photo</div>
 hello
 
 </body>
