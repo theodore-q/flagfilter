@@ -74,17 +74,23 @@
     console.log('Welcome!  Fetching your information.... ');
     FB.api('/me', function(response) {
       console.log('Successful login for: ' + response.name);
+      var fbID = FB.getUserID()
+      
       document.getElementById('status').innerHTML =
         'Thanks for logging in, ' + response.name + '!';
     });
   }
-  var fbID = FB.getUserID()
+  var fbID;
   
   var profileUrl
   
   $('.getphoto').click(function(){
     getPhotoLink()
+    $('.FBphoto').append($('<img/>')
+    .attr('src',getPhotoLink())
+    )
   })
+  
   
   function getPhotoLink(){
     FB.api(
@@ -92,6 +98,7 @@
     function (response) {
       if (response && !response.error) {
        profileUrl = response.data.url
+       return response.data.url
       }
     }
 );
@@ -112,6 +119,8 @@
 </div>
 
 <div class='getphoto' >get photo</div>
+
+<div class='FBphoto'></div>
 hello
 
 </body>
