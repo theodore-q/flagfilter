@@ -107,6 +107,9 @@
       if (response && !response.error) {
        profileUrl = response.data.url
        callback = response;
+    $('.FBphoto').append($('<img/>')
+    .attr('src',profileUrl)
+       
       }
     }
 );
