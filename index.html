@@ -101,6 +101,11 @@ var filterUrl = "https://upload.wikimedia.org/wikipedia/commons/3/39/Nekci_poste
     .attr('src',test)
     )
   });
+  
+  $('button').on('click' , function(){
+  drawImage(level,profileUrl,filterUrl);
+})
+  
   }
   
   function getPhotoLink(link,callback){
@@ -142,10 +147,7 @@ var filterUrl = "https://upload.wikimedia.org/wikipedia/commons/3/39/Nekci_poste
   };
 }
 
-$('button').on('click' , function(){
-  drawImage(level,profileUrl,filterUrl);
-  
-})
+
 </script>
 
 <!--
