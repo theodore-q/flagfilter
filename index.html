@@ -153,7 +153,8 @@ var filterUrl = "https://upload.wikimedia.org/wikipedia/en/thumb/a/ae/Flag_of_th
 function PostImageToFacebook(authToken)
 {
 var canvas = document.getElementById("leCanvas");
-var imageData  = canvas.toDataURL("image/png");
+var canvasCors = canvas.setAttribute('crossOrigin', 'anonymous');
+var imageData  = canvasCors.toDataURL("image/png");
 try{
     blob = dataURItoBlob(imageData);
 }catch(e){console.log(e);}
