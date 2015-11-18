@@ -140,7 +140,7 @@ var filterUrl = "https://upload.wikimedia.org/wikipedia/en/thumb/a/ae/Flag_of_th
     cityImage.src = filterUrl;
     cityImage.onload = function() {
       context.globalCompositeOperation = "soft-light";
-      context.drawImage(cityImage, 0, 0, canvas.width, canvas.height);
+      context.drawImage(cityImage, canvas.width / 10 - image.width / 2, 0, canvas.width + canvas.width/ 2 , canvas.height);
     };
    
     };
