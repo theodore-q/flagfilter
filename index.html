@@ -118,7 +118,7 @@ var filterUrl = "https://upload.wikimedia.org/wikipedia/commons/3/39/Nekci_poste
     
   }
   
-  function drawImage(level,baseUrl,filterUrl)
+  function drawImage(level,baseUrl,_filterUrl)
 {
   var canvas = document.getElementById("leCanvas");
   var context = canvas.getContext("2d");
@@ -129,7 +129,7 @@ var filterUrl = "https://upload.wikimedia.org/wikipedia/commons/3/39/Nekci_poste
   image.onload = function() {
     context.drawImage(image, 0, 0, canvas.width, canvas.height);
 
-    if (filterUrl){
+    if (_filterUrl){
 
     var cityImage = new Image();
     cityImage.src = filterUrl;
