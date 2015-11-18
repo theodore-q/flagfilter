@@ -102,7 +102,7 @@ var filterUrl = "https://upload.wikimedia.org/wikipedia/en/thumb/a/ae/Flag_of_th
     )
   });
   
-  $('button').on('click' , function(){
+  $('button#addFilter').on('click' , function(){
   drawImage(level,profileUrl,filterUrl);
 })
   
@@ -170,7 +170,7 @@ var filterUrl = "https://upload.wikimedia.org/wikipedia/en/thumb/a/ae/Flag_of_th
 <div class='FBphoto'></div>
 hello
 
-<button>add filter</button>
+<button class="addFilter">add filter</button>
 
 </body>
 </html>
