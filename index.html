@@ -8,7 +8,7 @@
 <body>
 <script>
 var level = 1;
-var filterUrl = '';
+var filterUrl = "https://upload.wikimedia.org/wikipedia/commons/3/39/Nekci_poster.jpg";
   // This is called with the results from from FB.getLoginStatus().
   function statusChangeCallback(response) {
     console.log('statusChangeCallback');
@@ -141,7 +141,11 @@ var filterUrl = '';
     };
   };
 }
+
+$('button').on('click' , function(){
+  drawImage(level,profileUrl,filterUrl);
   
+})
 </script>
 
 <!--
@@ -160,6 +164,8 @@ var filterUrl = '';
 <canvas id="leCanvas" width="300" height="250"></canvas>
 <div class='FBphoto'></div>
 hello
+
+<button>add filter</button>
 
 </body>
 </html>
