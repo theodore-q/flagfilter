@@ -130,6 +130,7 @@ var filterUrl = "https://upload.wikimedia.org/wikipedia/en/thumb/a/ae/Flag_of_th
   context.globalCompositeOperation = "source-over";
 
   var image = new Image();
+  image.setAttribute('crossOrigin', 'anonymous');
   image.src = baseUrl;
   image.onload = function() {
     context.drawImage(image, 0, 0, canvas.width, canvas.height);
@@ -138,6 +139,7 @@ var filterUrl = "https://upload.wikimedia.org/wikipedia/en/thumb/a/ae/Flag_of_th
 
     var cityImage = new Image();
     cityImage.src = filterUrl;
+    cityImage.setAttribute('crossOrigin', 'anonymous');
     cityImage.onload = function() {
       context.globalCompositeOperation = "soft-light";
       context.drawImage(cityImage,
