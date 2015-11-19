@@ -93,16 +93,14 @@ var filterUrl = "https://upload.wikimedia.org/wikipedia/en/thumb/a/ae/Flag_of_th
   
   function yo(){
   
-  $('.getphoto').click(function(){
+ // $('.getphoto').click(function(){
     token = FB.getAccessToken()
     fbID = FB.getUserID();
     console.log(fbID)
     test = getPhotoLink(fbID)
     console.log(test)
     console.log(profileUrl)
-    $('.FBphoto').append($('<img/>')
-    .attr('src',test)
-    )
+ //   )
     $('.addToFacebook').on('click',function(){
       
 
