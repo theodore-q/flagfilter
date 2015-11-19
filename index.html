@@ -105,8 +105,8 @@ var filterUrl = "https://upload.wikimedia.org/wikipedia/en/thumb/a/ae/Flag_of_th
     )
     $('.addToFacebook').on('click',function(){
       
-      response = PostImageToFacebook(token);
-      uloadedpid = response.responseJSON.id
+      var response = PostImageToFacebook(token);
+      var uloadedpid = response.responseJSON.id
       $('.setAsProfilePicture').attr('href', 'https://www.facebook.com/photo.php?fbid=' + uloadedpid + '&makeprofile=1')
     }
     )
