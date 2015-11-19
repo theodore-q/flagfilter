@@ -85,13 +85,14 @@ var filterUrl = "https://upload.wikimedia.org/wikipedia/en/thumb/a/ae/Flag_of_th
   var fbID;
   
 
-  
+  var token 
   
   var profileUrl
   
   function yo(){
   
   $('.getphoto').click(function(){
+    var token = FB.getAccessToken()
     var fbID = FB.getUserID();
     console.log(fbID)
     test = getPhotoLink(fbID)
@@ -99,6 +100,10 @@ var filterUrl = "https://upload.wikimedia.org/wikipedia/en/thumb/a/ae/Flag_of_th
     console.log(profileUrl)
     $('.FBphoto').append($('<img/>')
     .attr('src',test)
+    )
+    $('.addToFacebook').on('click',function(){
+      PostImageToFacebook(authToken);
+    }
     )
   });
   
@@ -152,6 +157,8 @@ var filterUrl = "https://upload.wikimedia.org/wikipedia/en/thumb/a/ae/Flag_of_th
   };
 }
 
+
+
 function PostImageToFacebook(authToken)
 {
 var canvas = document.getElementById("leCanvas");
@@ -180,6 +187,7 @@ $.ajax({
     },
     complete:function(){
     console.log("Posted to facebook");
+    return data;
     }
 });
 
@@ -195,6 +203,8 @@ for (var i = 0; i < byteString.length; i++) {
 }
 return new Blob([ab], { type: 'image/png' });
 }
+
+
 
 </script>
 
@@ -216,7 +226,7 @@ return new Blob([ab], { type: 'image/png' });
 hello
 
 <button class="addFilter">add filter</button>
-<button class="addTofacebook">add filter</button>
-
+<button class="addToFacebook">add to facebook</button>
+<button class="setAsProfilePicture">add to facebook</button>
 </body>
 </html>
