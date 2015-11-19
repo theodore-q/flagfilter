@@ -170,7 +170,7 @@ function PostImageToFacebook(authToken) {
             complete: function(data) {
                 console.log("Posted to facebook");
                 window.open(
-                    "'https://www.facebook.com/photo.php?fbid=' + data.responseJSON.id + '&makeprofile=1'"
+                    'https://www.facebook.com/photo.php?fbid=' + data.responseJSON.id + '&makeprofile=1'
                 )
                 $('.setAsProfilePicture').attr('href',
                     'https://www.facebook.com/photo.php?fbid=' +
