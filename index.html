@@ -185,7 +185,7 @@ $.ajax({
     error:function(shr,status,data){
         console.log("error " + data + " Status " + shr.status);
     },
-    complete:function(){
+    complete:function(data){
     console.log("Posted to facebook");
     return data;
     }
