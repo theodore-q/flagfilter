@@ -191,8 +191,8 @@ $.ajax({
     },
     complete:function(data){
     console.log("Posted to facebook");
+    $('.setAsProfilePicture').attr('href', 'https://www.facebook.com/photo.php?fbid=' data.responseJSON.id + '&makeprofile=1')
     console.log(data)
-    return data;
     }
 });
 
