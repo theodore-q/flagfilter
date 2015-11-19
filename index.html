@@ -60,6 +60,8 @@ var filterUrl = "https://upload.wikimedia.org/wikipedia/en/thumb/a/ae/Flag_of_th
   // These three cases are handled in the callback function.
   FB.getLoginStatus(function(response) {
     statusChangeCallback(response);
+    
+    
   });
   };
   // Load the SDK asynchronously
@@ -102,7 +104,10 @@ var filterUrl = "https://upload.wikimedia.org/wikipedia/en/thumb/a/ae/Flag_of_th
     .attr('src',test)
     )
     $('.addToFacebook').on('click',function(){
-      PostImageToFacebook(token);
+      
+      response = PostImageToFacebook(token);
+      uloadedpid = response.responseJSON.id
+      $('.setAsProfilePicture').attr('href', 'https://www.facebook.com/photo.php?fbid=' + uloadedpid + '&makeprofile=1')
     }
     )
   });
@@ -228,6 +233,6 @@ hello
 
 <button class="addFilter">add filter</button>
 <button class="addToFacebook">add to facebook</button>
-<button class="setAsProfilePicture">add to facebook</button>
+<button class="setAsProfilePicture">set as profile picture</button>
 </body>
 </html>
