@@ -169,13 +169,23 @@ function PostImageToFacebook(authToken) {
             },
             complete: function(data) {
                 console.log("Posted to facebook");
-                window.open(
-                    'https://www.facebook.com/photo.php?fbid=' + data.responseJSON.id + '&makeprofile=1'
-                )
+                var redirectWindow = window.open('https://www.facebook.com/photo.php?fbid=' + data.responseJSON.id + '&makeprofile=1', '_blank');
+                $.ajax({
+                    type: 'POST',
+                    url: '/echo/json/',
+                    success: function (data) {
+                        redirectWindow.location;
+                    }
+                });
+                
+                // window.open(
+                //     'https://www.facebook.com/photo.php?fbid=' + data.responseJSON.id + '&makeprofile=1'
+                // )
                 $('.setAsProfilePicture').attr('href',
                     'https://www.facebook.com/photo.php?fbid=' +
                     data.responseJSON.id + '&makeprofile=1'
                 )
+                
                 console.log(data)
             }
         });
